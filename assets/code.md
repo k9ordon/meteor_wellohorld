@@ -200,6 +200,58 @@ wow flipInX
 
 
 
+
+
+
+# methods
+
+meteor remove insecure
+
+Meteor.methods({
+  addTask: function (text) {
+    if (! Meteor.userId()) {
+      throw new Meteor.Error("not-authorized");
+    }
+
+    Tasks.insert({
+      text: text,
+      createdAt: new Date(),
+      owner: Meteor.userId(),
+      username: Meteor.user().username
+    });
+  }
+});
+
+
+Meteor.call("addTask", text);
+
+
+
+# publish subscribe
+
+meteor remove autopublish
+
+if (Meteor.isServer) {
+  Meteor.publish("tasks", function () {
+    return Tasks.find();
+  });
+}
+
+
+Meteor.subscribe("tasks");
+
+
+
+
+
+
+
+
+
+
+# markdown
+
+
 .markdown-preview hr {
     height:70%;
     //background:rgba(255,255,255,0.5);
