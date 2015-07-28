@@ -9,9 +9,10 @@ if (Meteor.isClient) {
       return Messages.find({}, {limit: 2, sort: {date: -1}}).map(function(message) {
           message.user = Meteor.users.findOne({_id: message.user_id});
           return message;
-      });;
+      });
     }
   });
+
 
   Template.addform.events({
     'submit form': function (e) {
