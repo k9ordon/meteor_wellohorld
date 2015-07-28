@@ -129,7 +129,7 @@ xcode nd stuff: ["running on mobile"](https://www.meteor.com/tutorials/blaze/run
 `Yo = new Mongo.Collection('yos');`
 
 - `insert`,`update`&`remove` from client & server
-- optimistic ui with minimongo
+- [optimistic ui](http://info.meteor.com/blog/optimistic-ui-with-meteor-latency-compensation) with minimongo
 - autopublish & insecure default
 
 ***
@@ -196,6 +196,18 @@ Router.route('/', function () {
 => `?_escaped_fragment_=`
 
 ***
+
+## made with meteor
+
+- http://blonk.co
+- https://workpop.com/
+- https://respond.ly
+
+[Which-startups-use-Meteor-in-production](http://www.quora.com/Which-startups-use-Meteor-in-production)
+
+
+***
+
 
 # the end
 
