@@ -8,7 +8,6 @@
 ## what is meteor.js
 
 - fullstack javascript app framework 💪
-- [good documentation](https://www.meteor.com/install)
 - rapid prototyping (insecure first)
 - realtime default
 
@@ -19,12 +18,14 @@
 ## what is inside
 
 - pure javascript 😻😻😍
+- [good documentation](https://www.meteor.com/install)
 - [ddp](https://www.meteor.com/ddp) "rest for websockets"
 - mongodb [livequery](https://www.meteor.com/livequery)
 - painless mobile builds
 - blaze - reactive template rendering
 - [atmosphere](http://atmospherejs.com)
 - core [supports](http://stackoverflow.com/questions/10127211/what-web-browsers-are-supported-by-meteor-web-framework) ie6+
+
 
 ***
 
@@ -58,7 +59,7 @@
 ***
 
 ## app structure
-
+@todo check naming
 - `client`
 - `server`
 - `/public`
