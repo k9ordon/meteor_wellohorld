@@ -1,9 +1,9 @@
 <template name="messageList">
 
     <ul>
-    {{#each messages}}
-        <li>{{ email }}: {{ text }}</li>
-    {{/each}}
+        {{#each messages}}
+            <li>{{ user.username }}: {{ text }}</li>
+        {{/each}}
     </ul>
 
 </template>
