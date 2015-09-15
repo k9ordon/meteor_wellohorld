@@ -159,10 +159,10 @@ xcode nd stuff: ["running on mobile"](https://www.meteor.com/tutorials/blaze/run
 
 ***
 
-## 1 simple messaging app
+## message app
 
-- add message form
-- list messages
+- add form
+- messages list
 
 ***
 
@@ -219,11 +219,15 @@ Router.route('/', function () {
 
 ## made with meteor
 
-- http://blonk.co
-- https://workpop.com/
-- https://respond.ly
+[jssolutionsdev.com Meteor examples](http://www.jssolutionsdev.com/blog/Meteor-Apps-Source-Example/?utm_campaign=answers&utm_medium=community&utm_source=quora)
 
 [Which-startups-use-Meteor-in-production](http://www.quora.com/Which-startups-use-Meteor-in-production)
+
+- http://blonk.co
+- http://www.telescopeapp.org/
+- https://workpop.com/
+
+
 
 
 ***
