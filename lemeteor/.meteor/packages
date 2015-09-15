@@ -12,3 +12,5 @@ iron:router
 accounts-ui
 accounts-password
 accounts-facebook
+spiderable
+momentjs:moment
