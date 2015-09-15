@@ -8,11 +8,10 @@ meteor-platform
 autopublish
 insecure
 less
-fourseven:scss
-meteoric:ionic-sass
 iron:router
 accounts-ui
 accounts-password
 accounts-facebook
 spiderable
-timmyg:wow
+momentjs:moment
+semantic:ui-css

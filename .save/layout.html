@@ -1,11 +1,8 @@
 <template name="layout">
-  <header>
-    <h1>yo</h1>
-    <a href="/">yolo</a>
-    <a href="/messages">messages</a>
-    {{> loginButtons}}
-  </header>
-  <div>
-    {{> yield}}
+    <h1>1 simple message app</h1>
+
+    {{> nav}}
+    <div class="main ui container">
+        {{> yield}}
     </div>
 </template>
