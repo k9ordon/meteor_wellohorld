@@ -5,11 +5,20 @@
 
 ***
 
+Klemens Gordon
+
+- @thisisgordon
+- working at karriere.at
+- loves se javascript
+
+***
+
 ## what is meteor.js
 
 - fullstack javascript app framework 💪
 - rapid prototyping (insecure first)
 - realtime default
+- awesome dev experience (cli)
 
 ***
 
@@ -18,11 +27,11 @@
 ## what is inside
 
 - pure javascript 😻😻😍
-- [good documentation](https://www.meteor.com/install)
+- [good documentation](http://docs.meteor.com/#/full/)
 - [ddp](https://www.meteor.com/ddp) "rest for websockets"
 - mongodb [livequery](https://www.meteor.com/livequery)
 - painless mobile builds
-- blaze - reactive template rendering
+- [blaze](https://www.meteor.com/blaze) - reactive template rendering
 - [atmosphere](http://atmospherejs.com)
 - core [supports](http://stackoverflow.com/questions/10127211/what-web-browsers-are-supported-by-meteor-web-framework) ie6+
 
@@ -51,22 +60,23 @@
 
 =>
 
-- nodejs server
+- nodejs server [client](http://localhost:3000)
 - mongodb
-- awsome dev enviroment (hot code push)
-- minified & concatenated [client](http://localhost:3000)
+- hot code push
 
 ***
 
 ## app structure
-@todo check naming
-- `client`
-- `server`
+
+- `/client`
+- `/server`
 - `/public`
 - `/private`
 - `lib`
 
 `if(Meteor.isClient)` `if(Meteor.isServer)` `if(Meteor.isCordova)`
+
+[docs.meteor.com](http://docs.meteor.com/#/full/structuringyourapp)
 
 ***
 
@@ -77,7 +87,7 @@
 - by filename
 - `main.*` last
 
-[docs.meteor.com](http://docs.meteor.com/#/full/structuringyourapp)
+[docs.meteor.com](http://docs.meteor.com/#/full/fileloadorder)
 
 ***
 
@@ -91,6 +101,7 @@
 ***
 
 ## 👉 ui interaction
+
 - helpers
 - events
 
@@ -135,6 +146,7 @@ xcode nd stuff: ["running on mobile"](https://www.meteor.com/tutorials/blaze/run
 
 ***
 
+
 ## security
 
 > Q: how to make meteor secure?
@@ -144,6 +156,13 @@ xcode nd stuff: ["running on mobile"](https://www.meteor.com/tutorials/blaze/run
 - publish & subscribe
 - methods
 - allow/deny
+
+***
+
+## 1 simple messaging app
+
+- add message form
+- list messages
 
 ***
 
