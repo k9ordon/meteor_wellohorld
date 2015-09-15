@@ -8,6 +8,7 @@ mongodb
 
 
 
+
 ## helper & events
 
 if (Meteor.isClient) {
@@ -37,55 +38,51 @@ if (Meteor.isClient) {
 
 
 
-## read insert
-
-<template name="addform">
-    <form>
-        <input id="text"><button>go</button>
-    </form>
-</template>
-
-
+## message app
 
 Messages = new Mongo.Collection('messages');
 
-Template.addform.events({
-  'submit form': function (e) {
-      e.preventDefault();
-      Messages.insert({text: 'yolo'});
-  }
-});
 
-
-
-Template.addform.events({
-  'submit form': function (e) {
-      e.preventDefault();
-      Messages.insert({
-          data: new Date(),
-          text: $('input').val()
-      });
-      $('input').val('');
-  }
-});
-
-
-
-
-<template name="history">
-    History:
-    {{#each messages}}
-        <li>{{text}}</li>
-    {{/each}}
+<template name="addForm">
+    <form>
+        <input id="addMessage" placeholder="add your message">
+    </form>
 </template>
 
-Template.history.helpers({
-  messages: function () {
-    return Messages.find({});
-  }
+Template.addForm.events({
+    'submit form': function(e) {
+        e.preventDefault();
+        Messages.insert({
+            text: e.target[0].value,
+            date: new Date()
+        });
+        e.target[0].value = '';
+    }
 });
 
-Messages.find({}, {limit: 2, sort: {date: -1}})
+
+
+
+
+<template name="messageList">
+    <div class="ui comments">
+        {{#each messages}}
+            <div class="comment">
+                <div class="metadata">
+                    <span class="date">{{ date }}</span>
+                </div>
+                <div class="text">{{ text }}</div>
+            </div>
+        {{/each}}
+    </div>
+</template>
+
+Template.messageList.helpers({
+    messages: function() {
+        return Messages
+            .find({}, {limit:10, sort:{date:-1}});
+    }
+});
 
 
 
@@ -101,36 +98,42 @@ Messages.find({}, {limit: 2, sort: {date: -1}})
 
 ## routes
 
-
-Router.route('/', function () {
-  this.render('Home');
+Router.configure({
+    layoutTemplate: 'layout'
 });
 
-Router.route('/messages', function () {
-  this.render('Messages');
-});
+<template name="layout">
+    <h1>1 simple message app</h1>
 
-<template name="messages">
-      {{> history}}
-      {{> addform}}
+    {{> nav}}
+    <div class="main ui container">
+        {{> yield}}
+    </div>
 </template>
+
+
+
+
+Router.route('/', function() {
+    this.render('Index', {data: {lol:5}});
+});
+
+Router.route('/messages', function() {
+    this.render('messages', {});
+});
+
 
 
 
 <template name="layout">
-  <header>
-    <h1>yo</h1>
-    <a href="/">yolo</a>
-    <a href="/messages">messages</a>
-  </header>
-  <div>
-    {{> yield}}
+    <h1>1 simple message app</h1>
+
+    {{> nav}}
+    <div class="main ui container">
+        {{> yield}}
     </div>
 </template>
 
-Router.configure({
-  layoutTemplate: 'layout'
-});
 
 
 
@@ -142,18 +145,25 @@ Router.configure({
 
 
 
+# user
 
-# map
+user_id: Meteor.userId()
 
-messages: function () {
-  return Messages.find({}).map(function(message) {
-      message.user = Meteor.users.findOne({_id: message.user_id});
-      return message;
-  });
-}
+.map(function(message) {
+    var user = Meteor.users.findOne({_id:message.user_id});
+
+    message.username = user.username || user.profile.name;
+    return message;
+})
+
+{{username}}
 
 
 
+
+# moment
+momentjs:moment
+message.moment = moment(message.date).fromNow();
 
 
 
@@ -168,10 +178,14 @@ messages: function () {
 
 # oauth
 
-https://developers.facebook.com/apps/888486161228394/dashboard/
-888486161228394
-46fa76e2e980a0c11493528eb68145a0
+https://developers.facebook.com/apps/511549112354683/
+511549112354683
+4e35e7d2a708cfa013cf335f11fafb95
 
+
+https://developers.facebook.com/apps/511549019021359/
+511549019021359
+03dc0e5051fa42ec3e4bcd0fc5a2353d
 
 
 
