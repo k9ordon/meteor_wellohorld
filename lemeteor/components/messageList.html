@@ -1,9 +1,15 @@
 <template name="messageList">
 
-    <ul>
+    <div class="ui comments">
         {{#each messages}}
-            <li>{{moment}} {{ user.profile.name }}: {{ text }}</li>
+            <div class="comment">
+                <span class="author">{{ username }}</span>
+                <div class="metadata">
+                    <span class="date">{{ moment }}</span>
+                </div>
+                <div class="text">{{ text }}</div>
+            </div>
         {{/each}}
-    </ul>
+    </div>
 
 </template>
