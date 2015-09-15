@@ -9,3 +9,5 @@ autopublish
 insecure
 less
 iron:router
+accounts-ui
+accounts-password

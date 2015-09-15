@@ -4,7 +4,8 @@ if(Meteor.isClient) {
             e.preventDefault();
             Messages.insert({
                 text: e.target[0].value,
-                date: new Date()
+                date: new Date(),
+                user_id: Meteor.userId()
             });
             e.target[0].value = '';
         }
