@@ -7,7 +7,7 @@
 
 Klemens Gordon
 
-- @thisisgordon
+- [@thisisgordon](http://k94n.com)
 - working at karriere.at
 - loves se javascript
 
