@@ -8,8 +8,8 @@
 Klemens Gordon
 
 - [@thisisgordon](http://k94n.com)
-- working at karriere.at
 - loves se javascript
+- working at karriere.at
 
 ***
 
@@ -172,7 +172,10 @@ xcode nd stuff: ["running on mobile"](https://www.meteor.com/tutorials/blaze/run
 
 ```js
 Router.route('/', function () {
-  this.render('Home', {data: {title: 'My Title'}});
+  this.render(
+      'Index',
+      {data: {oof: 'rab'}}
+  );
 });
 ```
 
